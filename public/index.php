@@ -322,4 +322,9 @@ require_once '../includes/dbOperation.php';
         }
     });
 
+    //Provera IP adrese!
+    $app->get('/serverip', function (Request $request, Response $response){
+        $response->getBody()->write(file_get_contents('https://api.ipify.org'));
+    });
+
 $app->run();
